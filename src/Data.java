@@ -17,7 +17,7 @@ public class Data {
     prioridad = 1;
 }
    public String getData(){
-       return "v:"+valor+" P:"+prioridad;
+       return "v:"+valor+" P:"+prioridad;  //V es igual a valor y P es igual a prioridad
    }
    
    
