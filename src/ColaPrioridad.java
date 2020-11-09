@@ -42,12 +42,21 @@ public class ColaPrioridad {
         if(ini == fin || fin==0){
             return;
         }
-        for(int temp=fin; temp>0;temp--){
-            if(cola[temp].prioridad>cola[temp-1].prioridad){
-                Data copiaCola1 = cola[temp-1];
-                cola[temp-1]=cola[temp];
-                cola[temp] = copiaCola1;
-            }
+        for(int temp=fin; temp!=ini && cola[temp].prioridad>cola[temp-1].prioridad ;temp--){
+            
+                Data copiaCola1 = new Data();
+                int anterior =temp-1;
+                
+                copiaCola1.valor = cola[anterior].valor;
+                copiaCola1.prioridad = cola[anterior].prioridad;
+                
+                cola[anterior].valor = cola[temp].valor;
+                cola[anterior].prioridad = cola[temp].prioridad;
+                
+                cola[temp].valor = copiaCola1.valor;
+                cola[temp].prioridad = copiaCola1.prioridad;
+                
+            
         }
      }
      
@@ -65,7 +74,8 @@ public class ColaPrioridad {
         return true;
     }
     
-    public Data  valorEliminado(){
+    public Data 
+         valorEliminado(){
         return valorEliminado;
     }
     
